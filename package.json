@@ -1,7 +1,6 @@
 {
-  "name": "poc-publish-note",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@yhy-1/poc-publish-note",
+  "version": "0.1.1",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -34,5 +33,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "semantic-release": "^23.0.5"
   }
 }
