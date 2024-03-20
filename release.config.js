@@ -4,19 +4,10 @@
 module.exports = {
   branches: ["develop"],
   plugins: [
-    // https://github.com/semantic-release/commit-analyzer
     "@semantic-release/commit-analyzer",
-
-    // https://github.com/semantic-release/release-notes-generator
     "@semantic-release/release-notes-generator",
-
-    // https://github.com/semantic-release/changelog
     "@semantic-release/changelog",
-
-    // https://github.com/semantic-release/npm
     "@semantic-release/npm",
-
-    // https://github.com/semantic-release/exec
     [
       "@semantic-release/exec",
       {
@@ -24,8 +15,6 @@ module.exports = {
         prepareCmd: "./release-prepare.sh ${nextRelease.version}",
       },
     ],
-
-    // https://github.com/semantic-release/git
     [
       "@semantic-release/git",
       {
@@ -39,8 +28,6 @@ module.exports = {
         ],
       },
     ],
-
-    // https://github.com/semantic-release/github
     "@semantic-release/github",
   ],
 };
