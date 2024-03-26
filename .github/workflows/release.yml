@@ -41,23 +41,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  publish:
-    needs: release
-    if: needs.release.outputs.new-release-published == 'true'
-    runs-on: [self-hosted, Standard]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ needs.release.inputs.branch }}
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
-          registry-url: https://npm.pkg.github.com/
-      - name: Set version
-        run: npm version --no-git-tag-version ${{ needs.release.outputs.release-version }}
-      - name: Publish
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}

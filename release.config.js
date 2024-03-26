@@ -20,6 +20,16 @@ module.exports = {
         ],
       },
     ],
-    "@semantic-release/github",
+    [
+      "@semantic-release/github",
+      {
+        assets: [
+          {
+            path: "build/*",
+            label: "Build",
+          },
+        ],
+      },
+    ],
   ],
 };
