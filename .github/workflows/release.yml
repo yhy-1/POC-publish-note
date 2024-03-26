@@ -17,8 +17,8 @@ jobs:
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
-      id-token: write
       pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     outputs:
       new-release-published: ${{ steps.semantic.outputs.new-release-published }}
       release-version: ${{ steps.semantic.outputs.release-version }}
@@ -39,7 +39,24 @@ jobs:
       - name: Semantic release
         id: semantic
         uses: codfish/semantic-release-action@v3
+        with:
+          branches: ${{ github.event.inputs.branch }}
         env:
           GH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  publish:
+    needs: release
+    if: needs.release.outputs.new-release-published == 'true'
+    runs-on: [self-hosted, Standard]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+          registry-url: https://npm.pkg.github.com/
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
