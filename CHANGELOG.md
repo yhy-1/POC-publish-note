@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/yhy-1/poc-publish-note/compare/v1.1.2...v2.0.0) (2024-03-26)
+
+
+### Features
+
+* some new feature ([915f61d](https://github.com/yhy-1/poc-publish-note/commit/915f61decf276de84b259526ddcd74e7485de99b))
+
+
+### BREAKING CHANGES
+
+* some breaking change
+
 ## [1.1.2](https://github.com/yhy-1/poc-publish-note/compare/v1.1.1...v1.1.2) (2024-03-26)
 
 
