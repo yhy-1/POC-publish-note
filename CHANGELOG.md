@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/yhy-1/poc-publish-note/compare/v1.1.1...v1.1.2) (2024-03-26)
+
+
+### Bug Fixes
+
+* 2 ([81d7560](https://github.com/yhy-1/poc-publish-note/commit/81d7560dba9e16e0066b9d7b83a9e71e06694cef))
+* tesdting 1 ([1e42ff3](https://github.com/yhy-1/poc-publish-note/commit/1e42ff3a050fe8067fd49d8b83bd4528ee016e3f))
+
 ## [1.1.1](https://github.com/yhy-1/poc-publish-note/compare/v1.1.0...v1.1.1) (2024-03-26)
 
 
