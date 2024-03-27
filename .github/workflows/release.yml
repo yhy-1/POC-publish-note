@@ -44,6 +44,15 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Post to Microsoft Teams
+        if: steps.semantic.outputs.new-release-published == 'true'
+        run: |
+          curl -H "Content-Type: application/json" -d '{
+          "@type": "MessageCard",
+          "@context": "http://schema.org/extensions",
+          "summary": "New Release Published",
+          "sections": [{
+            "text": "Design system release v${{ steps.semantic.outputs.release-version }}\n\n${{ steps.semantic.outputs.release-notes }}"}]}' ${{ secrets.TEAMS_WEBHOOK_URI }}
   publish:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
@@ -59,4 +68,4 @@ jobs:
       - name: Publish
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
