@@ -58,8 +58,7 @@ jobs:
           "@context": "http://schema.org/extensions",
           "summary": "New Release Published",
           "sections": [{
-            "text": | 
-            "Design system release v${{ needs.release.outputs.release-version }}
+            "text": "Design system release v${{ needs.release.outputs.release-version }}
             \n\n${{ needs.release.outputs.release-notes }}"}]}' ${{ secrets.TEAMS_WEBHOOK_URI }}
   publish:
     needs: release
