@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/yhy-1/poc-publish-note/compare/v2.1.0...v2.1.1) (2024-03-27)
+
+
+### Bug Fixes
+
+* try to use action instead ([7a380ed](https://github.com/yhy-1/poc-publish-note/commit/7a380ed8a7019ddd026d45eacb36cabf9bfd6775))
+
 # [2.1.0](https://github.com/yhy-1/poc-publish-note/compare/v2.0.2...v2.1.0) (2024-03-27)
 
 
