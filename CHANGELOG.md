@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/yhy-1/poc-publish-note/compare/v2.0.1...v2.0.2) (2024-03-27)
+
+
+### Bug Fixes
+
+* new fix ([06cd495](https://github.com/yhy-1/poc-publish-note/commit/06cd4950f95cfa32b90a1c8ededdc8e6897ab500))
+
 ## [2.0.1](https://github.com/yhy-1/poc-publish-note/compare/v2.0.0...v2.0.1) (2024-03-27)
 
 
