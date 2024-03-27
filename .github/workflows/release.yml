@@ -51,8 +51,9 @@ jobs:
         with:
           webhookUrl: | # Send to multiple channels in MS Teams
             ${{ secrets.TEAMS_WEBHOOK_URI}}
-          title: Design system release v${{ needs.release.outputs.release-version }}
-          message: ${{ needs.release.outputs.release-notes }}
+          title: "Design system release v${{ needs.release.outputs.release-version }}"
+          message: >-
+            "${{ needs.release.outputs.release-notes }}"
   publish:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
