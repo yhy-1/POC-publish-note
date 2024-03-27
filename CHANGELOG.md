@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/yhy-1/poc-publish-note/compare/v2.1.3...v2.1.4) (2024-03-27)
+
+
+### Bug Fixes
+
+* test pretty message for team ([d06dda1](https://github.com/yhy-1/poc-publish-note/commit/d06dda1d8635c454721017f316accf2cdbbcdbd6))
+
 ## [2.1.3](https://github.com/yhy-1/poc-publish-note/compare/v2.1.2...v2.1.3) (2024-03-27)
 
 
