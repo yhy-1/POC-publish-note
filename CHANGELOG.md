@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/yhy-1/poc-publish-note/compare/v3.0.0...v3.0.1) (2024-03-27)
+
+
+### Bug Fixes
+
+* a ([35addeb](https://github.com/yhy-1/poc-publish-note/commit/35addeb9449ab6254c66e3b1d3686c0d49f7abc1))
+
 # [3.0.0](https://github.com/yhy-1/poc-publish-note/compare/v2.1.4...v3.0.0) (2024-03-27)
 
 
