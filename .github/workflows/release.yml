@@ -47,13 +47,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Post to Microsoft Teams
         if: steps.semantic.outputs.new-release-published == 'true'
-        run: |
-          curl -H "Content-Type: application/json" -d '{
-          "@type": "MessageCard",
-          "@context": "http://schema.org/extensions",
-          "summary": "New Release Published",
-          "sections": [{
-            "text": "Design system release v${{ steps.semantic.outputs.release-version }}\n\n${{ steps.semantic.outputs.release-notes }}"}]}' ${{ secrets.TEAMS_WEBHOOK_URI }}
+        uses: neonidian/teams-notify-build-status@v3
+        with:
+          webhookUrl: | # Send to multiple channels in MS Teams
+            ${{ secrets.TEAMS_WEBHOOK_URI}}
+          title: Design system release v${{ needs.release.outputs.release-version }}
+          message: ${{ needs.release.outputs.release-notes }}
   publish:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
