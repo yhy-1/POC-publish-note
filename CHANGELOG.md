@@ -1,3 +1,20 @@
+# [3.0.0](https://github.com/yhy-1/poc-publish-note/compare/v2.1.4...v3.0.0) (2024-03-27)
+
+
+### Bug Fixes
+
+* small change ([cace7c1](https://github.com/yhy-1/poc-publish-note/commit/cace7c1d2a13d3259a2a1b3d489a392f77f1d9fc))
+
+
+### Features
+
+* some idea ([46f1664](https://github.com/yhy-1/poc-publish-note/commit/46f166476da8f28dbc7f5edddaf2889e8a20be1c))
+
+
+### BREAKING CHANGES
+
+* some breaking change
+
 ## [2.1.4](https://github.com/yhy-1/poc-publish-note/compare/v2.1.3...v2.1.4) (2024-03-27)
 
 
