@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/yhy-1/poc-publish-note/compare/v2.0.2...v2.1.0) (2024-03-27)
+
+
+### Bug Fixes
+
+* add release note ([5efa4ae](https://github.com/yhy-1/poc-publish-note/commit/5efa4aef045bef6615c2560e9c73f44d0c74884f))
+
+
+### Features
+
+* Add posting to team channel ([60e0fca](https://github.com/yhy-1/poc-publish-note/commit/60e0fca7b2187e1699335aa3fbb19bb927799fac))
+
 ## [2.0.2](https://github.com/yhy-1/poc-publish-note/compare/v2.0.1...v2.0.2) (2024-03-27)
 
 
