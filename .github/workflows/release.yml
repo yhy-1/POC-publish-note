@@ -47,7 +47,7 @@ jobs:
   publish:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
-    runs-on: [self-hosted, Standard]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
