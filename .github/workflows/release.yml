@@ -1,11 +1,6 @@
 name: Release
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: "Branch to release from"
-        required: true
-        default: "master"
 
 permissions:
   contents: read # for checkout
@@ -41,7 +36,7 @@ jobs:
         id: semantic
         uses: codfish/semantic-release-action@v3
         with:
-          branches: ${{ github.event.inputs.branch }}
+          branches: "master"
         env:
           GH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
