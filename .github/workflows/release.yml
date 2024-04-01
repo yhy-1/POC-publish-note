@@ -45,7 +45,23 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+  microft-teams:
+    name: Post to Microsoft Teams
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to Microsoft Teams
+        if: needs.release.outputs.new-release-published == 'true'
+        run: |
+          CHANNELS=("${{ secrets.TEAMS_UI_ENABLEMENT_DEVS }}" "${{ secrets.TEAMS_TEST_CHANNEL}}") 
+          for uri in "${CHANNELS[@]}"; do
+            curl -H "Content-Type: application/json" -d '{
+            "@type": "MessageCard",
+            "@context": "http://schema.org/extensions",
+            "summary": "New Release Published",
+            "sections": [{
+              "text": "Sample Repo Release v${{ needs.release.outputs.release-version }}
+              \n\n${{ needs.release.outputs.release-notes }}"}]}' $uri
   publish:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
@@ -88,18 +104,4 @@ jobs:
           token: ${{ github.token }}
           state: failure
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-  microft-teams:
-    name: Post to Microsoft Teams
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Post to Microsoft Teams
-        if: needs.release.outputs.new-release-published == 'true'
-        run: |
-          curl -H "Content-Type: application/json" -d '{
-          "@type": "MessageCard",
-          "@context": "http://schema.org/extensions",
-          "summary": "New Release Published",
-          "sections": [{
-            "text": "Design system release v${{ needs.release.outputs.release-version }}
-            \n\n${{ needs.release.outputs.release-notes }}"}]}' ${{ secrets.TEAMS_WEBHOOK_URI }}
+ 
