@@ -96,10 +96,12 @@ jobs:
       - name: Post to Microsoft Teams
         if: needs.release.outputs.new-release-published == 'true'
         run: |
-          curl -H "Content-Type: application/json" -d '{
-          "@type": "MessageCard",
-          "@context": "http://schema.org/extensions",
-          "summary": "New Release Published",
-          "sections": [{
-            "text": "Design system release v${{ needs.release.outputs.release-version }}
-            \n\n${{ needs.release.outputs.release-notes }}"}]}' ${{ secrets.TEAMS_WEBHOOK_URI }}
+          CHANNELS=("${{ secrets.TEAMS_UI_ENABLEMENT_DEVS }}" "${{ secrets.TEAMS_TEST_CHANNEL}}") 
+          for uri in "${CHANNELS[@]}"; do
+            curl -H "Content-Type: application/json" -d '{
+            "@type": "MessageCard",
+            "@context": "http://schema.org/extensions",
+            "summary": "New Release Published",
+            "sections": [{
+              "text": "Sample Repo Release v${{ needs.release.outputs.release-version }}
+              \n\n${{ needs.release.outputs.release-notes }}"}]}' $uri
