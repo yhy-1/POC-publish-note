@@ -1,3 +1,20 @@
+# [3.1.0](https://github.com/yhy-1/poc-publish-note/compare/v3.0.1...v3.1.0) (2024-04-01)
+
+
+### Bug Fixes
+
+* **UIEN-3949:** UIEN-3949 try to connect to Jira ([cac7854](https://github.com/yhy-1/poc-publish-note/commit/cac78549c0e2543dc8a649518e8b0c18b7117a78))
+
+
+### Features
+
+* test post to team with multiple channel ([cc76704](https://github.com/yhy-1/poc-publish-note/commit/cc76704bcbb650ad9f8f3d112de526f946215a01))
+* test post to team with multiple channel ([69ccbd0](https://github.com/yhy-1/poc-publish-note/commit/69ccbd0c667864976b67281b8381c6bb055ab388))
+* **UIEN-3949:** test post to team with multiple channel ([893f52d](https://github.com/yhy-1/poc-publish-note/commit/893f52dedbed80338ee11a9cfb97d827aa5cf511))
+* **UIEN-3949:** test post to team with multiple channel ([8327dbf](https://github.com/yhy-1/poc-publish-note/commit/8327dbf156b0e38db370bd3433096054f4b3f1c8))
+* **UIEN-3949:** test post to team with multiple channel ([702e97f](https://github.com/yhy-1/poc-publish-note/commit/702e97f2d224fa38fbedac091605a3c2f1a97651))
+* **UIEN-3949:** test post to team with multiple channel ([53857eb](https://github.com/yhy-1/poc-publish-note/commit/53857ebe70388d04416862db32ee7d02c4ec478a))
+
 ## [3.0.1](https://github.com/yhy-1/poc-publish-note/compare/v3.0.0...v3.0.1) (2024-03-27)
 
 
