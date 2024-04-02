@@ -55,8 +55,9 @@ jobs:
             "@context": "http://schema.org/extensions",
             "summary": "New Release Published",
             "sections": [{
-              "text": "Sample Repo Release v${{ needs.release.outputs.release-version }}
-              \n\n${{ needs.release.outputs.release-notes }}"}]}' $uri
+              "text": "Sample Repo Release v${{ needs.release.outputs.release-version }}\n\n${{ needs.release.outputs.release-notes }}"
+            }]}' $uri
+          done
   publish:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
