@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/yhy-1/poc-publish-note/compare/v3.1.0...v3.2.0) (2024-04-02)
+
+
+### Features
+
+* **UIEN-3949:** Testing senting release to microsoft team channels ([7e181b7](https://github.com/yhy-1/poc-publish-note/commit/7e181b77fd4ceb6d1cf344a9b6b969d00c24a07a))
+
 # [3.1.0](https://github.com/yhy-1/poc-publish-note/compare/v3.0.1...v3.1.0) (2024-04-01)
 
 
