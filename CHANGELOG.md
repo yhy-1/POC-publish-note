@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/yhy-1/poc-publish-note/compare/v3.2.0...v3.3.0) (2024-04-02)
+
+
+### Features
+
+* **UIEN-3949:** Update release workflow to senting release to microsoft team channels ([de4fd83](https://github.com/yhy-1/poc-publish-note/commit/de4fd839270713a671c57b53e6ccaf4a12f63c41))
+
 # [3.2.0](https://github.com/yhy-1/poc-publish-note/compare/v3.1.0...v3.2.0) (2024-04-02)
 
 
