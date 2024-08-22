@@ -1,10 +1,14 @@
 name: Release
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - next/*
+      - release/*
 
 permissions:
   contents: read # for checkout
-
+  id-token: write # to enable use of OIDC for npm provenance
 jobs:
   release:
     name: Release
@@ -19,15 +23,19 @@ jobs:
       release-version: ${{ steps.semantic.outputs.release-version }}
       release-notes: ${{ steps.semantic.outputs.release-notes }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
+          registry-url: "https://npm.pkg.github.com"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -40,24 +48,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  microft-teams:
-    name: Post to Microsoft Teams
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Post to Microsoft Teams
-        if: needs.release.outputs.new-release-published == 'true'
-        run: |
-          CHANNELS=("${{ secrets.TEAMS_UI_ENABLEMENT_DEVS }}" "${{ secrets.TEAMS_TEST_CHANNEL}}") 
-          for uri in "${CHANNELS[@]}"; do
-            curl -H "Content-Type: application/json" -d '{
-            "@type": "MessageCard",
-            "@context": "http://schema.org/extensions",
-            "summary": "New Release Published",
-            "sections": [{
-              "text": "Sample Repo Release v${{ needs.release.outputs.release-version }}\n\n${{ needs.release.outputs.release-notes }}"
-            }]}' $uri
-          done
+
   publish:
     needs: release
     if: needs.release.outputs.new-release-published == 'true'
