@@ -1,8 +1,8 @@
 module.exports = {
   branches: [
     "master",
-    { name: /^next\/.*/, channel: "next" },
-    { name: /^release\/v\d+$/, range: ".x", channel: "maintenance" },
+    { name: "next/*", channel: "next" },
+    { name: "release/v*", range: ".x", channel: "maintenance" },
   ],
   plugins: [
     "@semantic-release/commit-analyzer",
