@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-THIS IS A TEST FOR NON BREAKING FEATURE CHANGE
+THIS IS A TEST FOR BREAKING FEATURE CHANGE IN NEXT v26 RELEASE
+
+- An additional change after breaking changes
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
