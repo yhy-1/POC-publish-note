@@ -3,6 +3,7 @@
 THIS IS A TEST FOR BREAKING FEATURE CHANGE IN NEXT v26 RELEASE
 
 - An additional change after breaking changes
+- Add 1
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
