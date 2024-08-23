@@ -1,9 +1,5 @@
 module.exports = {
-  branches: [
-    "master",
-    "release/v+([0-9])?(.{+([0-9]),x}).x",
-    { name: "next/*", channel: "next" },
-  ],
+  branches: ["master", "release/v+([0-9])?(.{+([0-9]),x}).x"],
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
