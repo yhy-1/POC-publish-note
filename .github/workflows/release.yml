@@ -4,7 +4,7 @@ on:
     branches:
       - master
       - next/*
-      - release/*
+      - release/v*.x
 
 permissions:
   contents: read # for checkout
