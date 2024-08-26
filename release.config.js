@@ -1,7 +1,7 @@
 module.exports = {
   branches: [
     "master",
-    "release/v+([0-9])?(.{+([0-9]),x}).x",
+    "release/v[0-9]+\\.x",
     { name: "next/*", channel: "next" },
   ],
   plugins: [
