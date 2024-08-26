@@ -43,8 +43,6 @@ jobs:
       - name: Semantic release
         id: semantic
         uses: codfish/semantic-release-action@v3
-        with:
-          branches: "master"
         env:
           GH_TOKEN: ${{ secrets.GIT_PACKAGE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
