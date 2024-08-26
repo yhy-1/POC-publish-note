@@ -4,7 +4,7 @@ module.exports = {
     {
       name: "release/v[0-9]+\\.x",
       range: (branch) => branch.name.replace("release/v", "") + ".x",
-      channel: "maintenance",
+      channel: (branch) => branch.name.replace("release/v", "") + ".x",
     },
   ],
   plugins: [
