@@ -9,3 +9,4 @@
 
 - break v4
 - break v5
+- break v6
